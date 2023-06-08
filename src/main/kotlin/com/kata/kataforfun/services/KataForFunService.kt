@@ -1,17 +1,26 @@
 package com.kata.kataforfun.services
 
 import org.springframework.stereotype.Component
+import java.lang.StringBuilder
 
 @Component
 class KataForFunService {
 
     fun convertNumber(inputNumber: Int): String {
 
-        var stringNumber= inputNumber.toString()
-        if(inputNumber % 3 ==0 || stringNumber.contains('3')){
-            stringNumber = stringNumber.replace("3","Kata");
+        val stringNumber= inputNumber.toString()
+        var result = StringBuilder();
+        if(inputNumber % 3 ==0 ){
+           result.append("Kata")
         }
-        return stringNumber
+
+        for(digit in stringNumber){
+            when(digit){
+                '3' -> result.append("Kata")
+                else -> result.append(digit)
+            }
+        }
+        return result.toString()
     }
 
 }

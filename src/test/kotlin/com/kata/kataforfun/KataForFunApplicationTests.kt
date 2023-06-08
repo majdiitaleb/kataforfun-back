@@ -16,10 +16,23 @@ class KataForFunApplicationTests {
     }
 
     @Test
-    fun whenNoMatchIsFound_Should_Return_Number(){
-      val result =kataTestService.convertNumber(3);
-        assertEquals(result,"Kata");
+    fun whenJust_3_IsFound_Should_Return_KataKata(){
+        val result =kataTestService.convertNumber(3);
+        assertEquals(result,"KataKata");
     }
+    @Test
+    fun whenJust_3_IsFound_With_Int_Should_Return_KataInt(){
+        val result =kataTestService.convertNumber(31);
+        assertEquals(result,"Kata1");
+    }
+    @Test
+    fun whenMatch_3_IsFound_Should_Return_KataKataKata(){
+      val result =kataTestService.convertNumber(33);
+        assertEquals(result,"KataKataKata");
+    }
+
+
+
 
 
 }
