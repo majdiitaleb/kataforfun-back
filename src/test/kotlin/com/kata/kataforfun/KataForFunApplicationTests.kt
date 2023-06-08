@@ -31,6 +31,34 @@ class KataForFunApplicationTests {
         assertEquals(result,"KataKataKata");
     }
 
+    @Test
+    fun whenNoMatch3_5_7_IsFound_Should_Return_Digit(){
+        val result =kataTestService.convertNumber(1);
+        assertEquals(result,"1");
+    }
+    @Test
+    fun whenJust_5_IsFound_Should_Return_ForFor(){
+        val result =kataTestService.convertNumber(5);
+        assertEquals(result,"ForFor");
+    }
+
+    @Test
+    fun whenJust_7_IsFound_Should_Return_Fun(){
+        val result =kataTestService.convertNumber(7);
+        assertEquals(result,"Fun");
+    }
+
+    @Test
+    fun whenNumberDivisibleBy3_IsFound_Should_Return_Kata(){
+        val result =kataTestService.convertNumber(9);
+        assertEquals(result,"Kata");
+    }
+
+    @Test
+    fun whenNumberDivisibleBy3_and_contain_5_IsFound_Should_Return_KataFor(){
+        val result =kataTestService.convertNumber(51);
+        assertEquals(result,"KataFor");
+    }
 
 
 

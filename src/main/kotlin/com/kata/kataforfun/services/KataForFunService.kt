@@ -13,11 +13,22 @@ class KataForFunService {
         if(inputNumber % 3 ==0 ){
            result.append("Kata")
         }
+        if(inputNumber % 5 ==0 ){
+            result.append("For")
+        }
+        val bool: Boolean=   inputNumber % 3 ==0 || inputNumber % 5 ==0
 
         for(digit in stringNumber){
+
             when(digit){
                 '3' -> result.append("Kata")
-                else -> result.append(digit)
+                '5' -> result.append("For")
+                '7' -> result.append("Fun")
+                else -> if(!bool){
+                    result.append(digit)
+
+                }
+
             }
         }
         return result.toString()
