@@ -6,7 +6,12 @@ import org.springframework.stereotype.Component
 class KataForFunService {
 
     fun convertNumber(inputNumber: Int): String {
-        return ""
+
+        var stringNumber= inputNumber.toString()
+        if(inputNumber % 3 ==0 || stringNumber.contains('3')){
+            stringNumber = stringNumber.replace("3","Kata");
+        }
+        return stringNumber
     }
 
 }

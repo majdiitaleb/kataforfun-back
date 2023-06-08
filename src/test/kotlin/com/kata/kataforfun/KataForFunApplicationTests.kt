@@ -17,8 +17,8 @@ class KataForFunApplicationTests {
 
     @Test
     fun whenNoMatchIsFound_Should_Return_Number(){
-      val result =kataTestService.convertNumber(2);
-        assertEquals(result,"2");
+      val result =kataTestService.convertNumber(3);
+        assertEquals(result,"Kata");
     }
 
 
