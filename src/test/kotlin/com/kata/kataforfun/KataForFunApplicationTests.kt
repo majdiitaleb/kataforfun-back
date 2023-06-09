@@ -61,6 +61,23 @@ class KataForFunApplicationTests {
     }
 
 
+    @Test
+    fun whenNumberNotDivisibleBy3or5_And_contain_5and3_Should_Return_ForKata(){
+        val result =kataTestService.convertNumber(53);
+        assertEquals(result,"ForKata");
+    }
+    @Test
+    fun whenNumberDivisibleBy3AndContain7_Should_Return_KataFun(){
+        val result =kataTestService.convertNumber(27);
+        assertEquals(result,"KataFun");
+    }
+
+    @Test
+    fun whenNumberDivisibleBy3And5_AndContain_5_Should_Return_KataForFor(){
+        val result =kataTestService.convertNumber(15);
+        assertEquals(result,"KataForFor");
+    }
+
 
 
 }
