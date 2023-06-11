@@ -11,7 +11,16 @@ pipeline {
         steps {
              sh "mvn test"
         }
-      }
+      },
+       stage('Docker build and push') {
+                  steps {
+                  withDockerRegistry(credentialsId: "docker-hub", url: "") {
+                    sh 'printenv'
+                    sh 'sudo docker build -t majditaleb/kataforfun-app:""$GIT_COMMIT"" .'
+                    sh 'docker push  majditaleb/kataforfun-app:""$GIT_COMMIT""'
+                    }
+                  }
+              }
       }
 
        post {
