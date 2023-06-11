@@ -11,7 +11,7 @@ pipeline {
         steps {
              sh "mvn test"
         }
-      },
+      }
        stage('Docker build and push') {
                   steps {
                   withDockerRegistry(credentialsId: "docker-hub", url: "") {
