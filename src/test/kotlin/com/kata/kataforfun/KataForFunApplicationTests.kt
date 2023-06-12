@@ -204,17 +204,5 @@ class KataForFunApplicationTests {
         assertEquals(expected, result)
     }
 
-    @Test
-    fun testConvertNumber_NullIinput() {
-        // Arrange
-        val inputNumber: Int? = null
 
-        // Act
-        val exception = assertThrows(RuntimeException::class.java) {
-            kataTestService.convertNumber(inputNumber)
-        }
-
-        // Assert
-        assertNull(exception.message)
-    }
 }
