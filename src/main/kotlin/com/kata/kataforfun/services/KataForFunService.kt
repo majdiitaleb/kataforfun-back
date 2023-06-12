@@ -6,17 +6,22 @@ import java.lang.StringBuilder
 @Component
 class KataForFunService {
 
-    fun convertNumber(inputNumber: Int): String {
+    fun convertNumber(inputNumber: Int?): String? {
+
+
+        try{
 
         val stringNumber= inputNumber.toString()
         var result = StringBuilder();
-        if(inputNumber % 3 ==0 ){
-           result.append("Kata")
-        }
-        if(inputNumber % 5 ==0 ){
-            result.append("For")
-        }
-        val bool: Boolean=   inputNumber % 3 ==0 || inputNumber % 5 ==0
+            if (inputNumber != null) {
+               if(inputNumber % 3 ==0 ){
+                    result.append("Kata")
+                }
+                 if(inputNumber % 5 ==0 ){
+                  result.append("For")
+                }
+            }
+        val bool: Boolean=   inputNumber!! % 3 ==0 || inputNumber!! % 5 ==0
 
         for(digit in stringNumber){
 
@@ -34,4 +39,9 @@ class KataForFunService {
         return result.toString()
     }
 
+    catch (e: RuntimeException) {
+        return null
+    }
+
+    }
 }
